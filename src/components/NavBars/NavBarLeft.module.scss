@@ -1,5 +1,96 @@
+
+.iconsAndCopyContainer {
+
+    display: flex;
+    flex-direction: column;
+    //border: solid yellow 3px;
+    background-color: black;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    width: height;
+    position: relative;
+    width: 6%;
+    overflow: hidden;
+
+
+}
+
 .container {
 
+    display: flex;
+    width: 100%;
+    height: 40%;
+    //border: rgb(160, 21, 21) solid 2px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30%;
+
+
+
+    ul {
+
+       list-style-type: none;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        overflow: hidden;
+
+        //border: solid rgb(57, 47, 255) 4px;
+    
+        padding: 0;
+
+        li {
+           width: 50%;
+           //border: solid rgb(30, 183, 61) 2px;
+           display: block;
+           margin-bottom: 10;
+           &:hover {
+            opacity: 0.8;
+            cursor: pointer;
+           }
+
+          
+          
+            
+           
+
+
+           img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+           }
+        }
+    }
+    
+}
+
+
+.copyContainer {
+
+    display: flex;
+    align-items: center;
+    //border: solid rgb(210, 144, 238) 5px;
+    transform: rotate(270deg);
+    justify-content: center;
+    height: 20%;
+    width: 170%;
 
     
+    p { 
+        
+        font-size: 12px;
+        padding: 0;
+        margin: 0;
+    
+    }
+  
+
+   
+   
+
 }

@@ -1,5 +1,48 @@
+.logoAndNavContainer {
+
+    display: flex;
+    flex-direction: row;
+    //border: solid yellowgreen 4px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    padding: 10px;
+    box-shadow: 2px 2px 2px black;
+
+    
+}
+
+
 .container {
+
+    display: flex;
+
+    height: 100%;
+ 
+    color: white;
+    align-items: center;
+    width: 80%;
+    justify-content: space-evenly;
 
 
     
+}
+
+.logoContainer {
+
+
+}
+
+
+
+.pending {
+
+    color: blue;
+
+}
+
+.active {
+
+    color: #FF6060;
+    text-decoration: underline;
 }

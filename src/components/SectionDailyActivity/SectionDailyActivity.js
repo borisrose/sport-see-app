@@ -7,7 +7,7 @@ const SectionDailyActivity = () => {
 
     return (
 
-        <section style={styles.container}>
+        <section className={styles.container}>
 
             Daily Activity
 

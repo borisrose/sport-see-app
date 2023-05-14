@@ -5,7 +5,7 @@ const AsideCPGL  = () => {
 
     return (
 
-        <aside style={styles.container}>
+        <aside className={styles.container}>
 
             Aside CPGL
 

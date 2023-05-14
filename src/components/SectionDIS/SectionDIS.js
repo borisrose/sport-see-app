@@ -8,8 +8,9 @@ const SectionDIS = () => {
     return (
 
 
-        <section style={styles.container}>
+        <section className={styles.container}>
 
+            Section DIS
             
         </section>
     )

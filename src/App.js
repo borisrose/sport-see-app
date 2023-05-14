@@ -7,8 +7,10 @@ import {
   Routes, 
   BrowserRouter,
   useRouteError,
+  Outlet,
 } from "react-router-dom";
 import Dashboard from './components/Dashboard/Dashboard';
+import SessionLayout from './layouts/SessionLayout';
 
 
 function App() {
@@ -26,8 +28,9 @@ function App() {
 
     <Routes>
 
-      <Route path="/" element={<Dashboard/>}  errorElement={<ErrorBoundary/>}/>
-
+      <Route path="/" element={<SessionLayout/>}  errorElement={<ErrorBoundary/>}>
+        <Route index element={<Dashboard/>} />
+      </Route>
 
     </Routes>
    

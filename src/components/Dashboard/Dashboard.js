@@ -1,27 +1,43 @@
 import React, { useState, useEffect } from "react"
 import SectionDailyActivity from "../SectionDailyActivity/SectionDailyActivity"
-
+import SectionDIS from "../SectionDIS/SectionDIS"
+import AsideCPGL from "../AsideCPGL/AsideCPGL"
+import styles from"./Dashboard.module.scss"
 
 const Dashboard = () => {
 
 
     return (
 
-        <>
-            <header>
+        <div className={styles.container}>
 
-            </header>
+            <div className={styles.leftContainer}>
 
-            <main>
+                <header>
+
+                <h1>Bonjour Thomas</h1>
+                <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+
+                </header>
+
+                <main>
 
                 <SectionDailyActivity />
+                <SectionDIS/>
 
 
-            </main>
-                    
+                </main>
+    
+
+
+
+            </div>
+
+            <AsideCPGL />
+          
         
         
-        </>
+        </div>
    
 
     )

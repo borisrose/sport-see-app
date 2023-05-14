@@ -1,0 +1,17 @@
+.container {
+
+    display: flex;
+    
+    //border: solid blue 4px;
+    flex-direction: row;
+    width: 98%;
+    padding: 30px 60px;
+}
+
+.leftContainer {
+
+    display: flex;
+    flex-direction: column;
+    //border: solid salmon 3px;
+    width: 80%;
+}
