@@ -1,4 +1,76 @@
 .container {
 
     display: flex;
+
+    height: 350px;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.durationContainer {
+
+    width: 30%;
+    //border: solid black 2px;
+    background-color: #FF0000;
+
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.intensityContainer {
+
+
+    display: flex;
+ 
+    background-color: #282D30;
+
+    width: 30%;
+    height: 70%;
+    
+
+
+}
+
+.scoreContainer {
+
+
+    display: flex;
+    //border: solid rgb(232, 106, 16) 2px;;
+    background-color: #FBFBFB;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 70%;
+
+
+
+}
+
+.customTooltip {
+
+    display: flex;
+    width: 30px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.legendContainer {
+
+    width: 60%;
+    align-items: center;
+    //border:white 2px solid;
+    justify-content: center;
+    color: #FFFFFF;
+
+
+    p {
+        margin: 0;
+        padding: 0;
+    }
+}
+

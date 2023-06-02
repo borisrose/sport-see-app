@@ -1,0 +1,59 @@
+.container {
+
+
+    display: flex;
+    width: 100%;
+    height: 100px;
+    background-color: #FBFBFB;
+    align-items: center;
+    justify-content: flex-start;
+    
+
+    padding: 20px;
+    //border: solid red 2px;
+
+
+
+}
+
+
+.boxImageContainer {
+    width: 20%;
+    //border: solid 1px black;
+    display: flex;
+    height: 60%;
+    img {
+
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+
+}
+
+
+
+
+.boxInfoContainer {
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    //border: solid black 1px;
+    height: 60%;
+    padding-left: 30px;
+
+    p {
+        margin: 0;
+        font-weight: 600;
+    }
+
+    p + p {
+        color: #74798C;
+        font-size: 12px;
+        font-weight: 500;
+    }
+}

@@ -20,7 +20,7 @@ class UserPerformance {
 
     constructor(userId,data){
         this.userId = typeof userId !== 'number' ? parseInt(userId, 10) : userId;
-        this.data = data.map(d => new DataItem(d.value, d.king))
+        this.data = data.map(d => new DataItem(d.value, d.kind))
     }
 
 }

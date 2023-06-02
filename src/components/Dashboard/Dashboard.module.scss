@@ -2,10 +2,11 @@
 
     display: flex;
     
-    //border: solid blue 4px;
+   //border: solid blue 4px;
     flex-direction: row;
     width: 98%;
     padding: 30px 60px;
+    justify-content: space-between;
 }
 
 .leftContainer {
@@ -14,4 +15,5 @@
     flex-direction: column;
     //border: solid salmon 3px;
     width: 80%;
+    
 }
