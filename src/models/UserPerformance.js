@@ -7,7 +7,7 @@ class DataItem {
     }
 }
 
-class UserPerformance {
+export class UserPerformance {
 
     kind = {
         1: 'cardio',

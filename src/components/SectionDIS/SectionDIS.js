@@ -1,10 +1,11 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import styles from "./SectionDIS.module.scss"
 import { LineChart, Tooltip, Line, XAxis, YAxis, CartesianGrid, Cell, Legend, ResponsiveContainer,  RadarChart, PolarAngleAxis, PolarRadiusAxis, PolarGrid, Radar, PieChart, Pie} from "recharts"
 import  { USER_AVERAGE_SESSIONS, USER_MAIN_DATA, USER_PERFORMANCE} from "../../mock/mockDatabase"
 import dayGetter from "../../utils/dayGetter"
 import performanceFixer from "../../utils/performanceFixer"
 import scoreHandler from "../../utils/scoreHandler"
+import ApiService from "../../service/index"
 
 
 
@@ -41,14 +42,41 @@ const CustomLegend = () => {
 const SectionDIS = () => {
 
     let id = 12
-    let uasRawData = USER_AVERAGE_SESSIONS.filter((o) => o.userId === id)[0].sessions;
-    let uasData = dayGetter(uasRawData)
+    //let uasRawData = USER_AVERAGE_SESSIONS.filter((o) => o.userId === id)[0].sessions;
+    //let uasData = dayGetter(uasRawData)
+    const [ uasData, setUASData ] = useState()
 
-    let upRawData = USER_PERFORMANCE.filter((o) => o.userId === id)[0].data;
-    let upData = performanceFixer(upRawData);
+    //let upRawData = USER_PERFORMANCE.filter((o) => o.userId === id)[0].data;
+    const [ upData, setUpData ] = useState()
+    //let upData = performanceFixer(upRawData);
 
-    let scoreRawData = USER_MAIN_DATA.filter((o) => o.id === id)[0]
-    let scoreData = scoreHandler(scoreRawData)
+    const [ scoreData, setScoreData ] = useState()
+    //let scoreRawData = USER_MAIN_DATA.filter((o) => o.id === id)[0]
+    //let scoreData = scoreHandler(scoreRawData)
+
+
+
+
+
+    useEffect(() => {
+
+      const fetchData = async() => {
+
+
+        let uasRawData = await ApiService.getUserAverageSession(id)
+        setUASData(dayGetter(uasRawData.sessions))
+        let upRawData = await ApiService.getUserPerformance(id)
+        setUpData(performanceFixer(upRawData.data))
+        let scoreRawData = await ApiService.getUserMainData(id)
+        setScoreData(scoreHandler(scoreRawData))
+      }
+
+      fetchData()
+
+
+
+
+    }, [])
 
   
     const COLORS = ["#FF0000", "#ffffff"];
@@ -59,7 +87,7 @@ const SectionDIS = () => {
         <section className={styles.container}>
 
             <article className={styles.durationContainer}>
-            <ResponsiveContainer width={"100%"} height={"100%"}>
+            {uasData && <ResponsiveContainer width={"100%"} height={"100%"}>
             <LineChart  data={uasData}
             >
                 <CartesianGrid strokeDasharray="0 0"
@@ -83,7 +111,7 @@ const SectionDIS = () => {
                 <Line type="monotone" dataKey="sessionLength" stroke="#ffffff" dot={false} strokeWidth={2}/>
              -
             </LineChart>
-            </ResponsiveContainer>
+            </ResponsiveContainer>}
 
 
 
@@ -91,7 +119,7 @@ const SectionDIS = () => {
 
             <article className={styles.intensityContainer}>
 
-            <ResponsiveContainer  width={"100%"} height={"100%"}>
+            {upData && <ResponsiveContainer  width={"100%"} height={"100%"}>
 
                 <RadarChart outerRadius={90} width={730} height={250} data={upData}>
                 <PolarGrid />
@@ -103,7 +131,7 @@ const SectionDIS = () => {
 
 
 
-            </ResponsiveContainer>
+            </ResponsiveContainer>}
          
 
                 
@@ -112,8 +140,10 @@ const SectionDIS = () => {
 
             <article className={styles.scoreContainer}>
 
+                   <h4> Score </h4>
 
-                   <ResponsiveContainer  width={"100%"} height={"100%"}>
+                   {scoreData && <ResponsiveContainer  width={"100%"} height={"100%"}>
+
 
                     <PieChart width={730} height={250}>
 
@@ -142,8 +172,14 @@ const SectionDIS = () => {
 
                     </PieChart>
 
-                   </ResponsiveContainer>
-               
+                   </ResponsiveContainer>}
+
+
+                   <p className={styles.percentage}>
+                      <strong>12%</strong> <br/>
+                      <span> de votre objectif        </span>
+                   </p>
+                            
                 
             </article>
 

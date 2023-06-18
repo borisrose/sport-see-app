@@ -34,16 +34,30 @@
 
 }
 
+
+h4 {
+
+    position: absolute;
+    top: 2%;
+    left: 2%;
+}
+
+.percentage {
+
+    position: absolute;
+
+}
 .scoreContainer {
 
 
     display: flex;
-    //border: solid rgb(232, 106, 16) 2px;;
+    border: solid rgb(232, 106, 16) 2px;;
     background-color: #FBFBFB;
     justify-content: center;
     align-items: center;
     width: 30%;
     height: 70%;
+    position: relative;
 
 
 

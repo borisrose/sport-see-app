@@ -14,10 +14,10 @@ class KeyData {
 
 class UserInfo {
 
-    constructor(firstname, lastname, age){
+    constructor(firstName, lastName, age){
 
-        this.firstname = typeof firstname !== 'string' ? firstname.toString() : firstname;
-        this.lastname =  typeof lastname !== 'string' ? lastname.toString() : lastname;
+        this.firstName = typeof firstName !== 'string' ? firstName.toString() : firstName;
+        this.lastName =  typeof lastName !== 'string' ? lastName.toString() : lastName;
         this.age = typeof age !== 'number' ? parseInt(age, 10) : age;
     }
 }
@@ -28,10 +28,10 @@ class UserInfo {
 export class UserMainData {
 
 
-    constructor(id, userInfo, todayScore, keyData){
+    constructor(id, userInfos, todayScore, keyData){
 
         this.id = typeof id !== 'number' ? parseInt(id, 10): id;
-        this.userInfo = new UserInfo(userInfo.firstname, userInfo.lastname, userInfo.age); 
+        this.userInfo = new UserInfo(userInfos.firstName, userInfos.lastName, userInfos.age); 
         this.todayScore =  typeof todayScore !== 'number' ? parseInt(todayScore, 10): todayScore;
         this.keyData = new KeyData(keyData.calorieCount, keyData.proteinCount, keyData.carbohydrateCount, keyData.lipidCount);
     }

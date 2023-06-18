@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect,useState } from "react";
 import styles from "./SectionDailyActivity.module.scss";
 import {
   BarChart,
@@ -12,7 +12,7 @@ import {
 } from "recharts";
 import { USER_ACTIVITY } from "../../mock/mockDatabase";
 import indiceFixer from "../../utils/indiceFixer";
-
+import ApiService from "../../service/index"
 
 
 
@@ -49,9 +49,27 @@ const CustomLegend = () => {
 
 const SectionDailyActivity = () => {
   const id = 12;
-  let rawData = USER_ACTIVITY.filter((o) => o.userId === id)[0].sessions;
-  let  data = indiceFixer(rawData)
-  console.log('data', data)
+  //let rawData = USER_ACTIVITY.filter((o) => o.userId === id)[0].sessions;
+  const [ data, setData] = useState()
+  
+
+  useEffect(() => {
+    const fetchData = async() => { 
+      let rawData = await ApiService.getUserActivity(id)
+      console.log('rawData.sessions after class ', rawData.sessions);
+      setData(indiceFixer(rawData.sessions));
+
+    }
+    
+
+  fetchData()
+
+
+
+  }, [])
+
+
+
 
   return (
     <section className={styles.container}>

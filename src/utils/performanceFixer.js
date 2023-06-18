@@ -1,6 +1,7 @@
 export default (dataBeforeBeingReversed) => {
 
 
+    console.log('dataBeforeBeingReversed', dataBeforeBeingReversed)
 
     let newArray = []
 
