@@ -125,7 +125,8 @@ export default {
 
          const data = USER_PERFORMANCE.find(u => u.userId === id)
 
-         return new UserPerformance(data.userId,data.data)
+         console.log("performance -->",data)
+         return new UserPerformance(data.userId, data.data)
 
       }
 

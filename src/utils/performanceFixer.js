@@ -73,6 +73,7 @@ export default (dataBeforeBeingReversed) => {
     })
 
 
+    console.log("performanceFixer", newArray)
     return newArray
 
 

@@ -41,7 +41,7 @@ const CustomLegend = () => {
 
 const SectionDIS = () => {
 
-    let id = 12
+    let id = 18
     //let uasRawData = USER_AVERAGE_SESSIONS.filter((o) => o.userId === id)[0].sessions;
     //let uasData = dayGetter(uasRawData)
     const [ uasData, setUASData ] = useState()
@@ -78,6 +78,12 @@ const SectionDIS = () => {
 
     }, [])
 
+
+    useEffect(() => {
+
+      console.log("--- uSER ---",upData)
+
+    }, [upData])
   
     const COLORS = ["#FF0000", "#ffffff"];
 
@@ -121,12 +127,12 @@ const SectionDIS = () => {
 
             {upData && <ResponsiveContainer  width={"100%"} height={"100%"}>
 
-                <RadarChart outerRadius={90} width={730} height={250} data={upData}>
+                <RadarChart outerRadius={60} width={"100%"} height={"100%"} data={upData}>
                 <PolarGrid />
                 <PolarAngleAxis dataKey="completeKind" />
-                <PolarRadiusAxis angle={30} domain={[0, 150]} />
-                <Radar dataKey={"value"} fill="#FF0101" fillOpacity={0.6} />
-                <Legend />
+                <PolarRadiusAxis angle={30} domain={[0, 150]} tick={false}  />
+                <Radar label={false} dataKey={"value"} fill="#FF0101" fillOpacity={0.6} />
+               
                 </RadarChart>
 
 

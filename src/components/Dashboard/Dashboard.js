@@ -14,7 +14,8 @@ const Dashboard = () => {
     const [ data, setData] = useState()
     const [isApiConntected, setIsApiConntected] = useState(true)
 
-    const id = 12
+    const id = 18;
+    
     useEffect(() => {
 
 

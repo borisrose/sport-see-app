@@ -47,11 +47,20 @@ const CustomLegend = () => {
   );
 };
 
+const CustomCursor = () => {
+
+  return(
+    <div className={styles.customCursor}>
+      <p> Hello </p>
+    </div>
+  )
+}
+
 const SectionDailyActivity = () => {
   const id = 12;
   //let rawData = USER_ACTIVITY.filter((o) => o.userId === id)[0].sessions;
   const [ data, setData] = useState()
-  
+
 
   useEffect(() => {
     const fetchData = async() => { 
@@ -69,6 +78,7 @@ const SectionDailyActivity = () => {
   }, [])
 
 
+  
 
 
   return (
@@ -79,7 +89,7 @@ const SectionDailyActivity = () => {
       
           data={data}
       
-          barSize={10}
+          barSize={5}
           
           barGap={10}
 
@@ -123,10 +133,11 @@ const SectionDailyActivity = () => {
             
           />
 
-          <Tooltip content={<CustomTooltip />} />
+          <Tooltip content={<CustomTooltip />} cursor={{stroke: 1, strokeWidth: 2}}/>
           <Legend
             verticalAlign="top"
             //width={100}
+       
             wrapperStyle={{
               top: -70,
               right: 0,
@@ -141,6 +152,7 @@ const SectionDailyActivity = () => {
             fill="#00000"
             descent={true}
             maxbarSize={30}
+       
      
             
        
@@ -149,6 +161,7 @@ const SectionDailyActivity = () => {
             dataKey="calories" 
             fill="#e80000" 
             maxBarSize={2}
+       
    
             
     
